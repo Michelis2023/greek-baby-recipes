@@ -389,44 +389,100 @@
             font-weight: bold;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .recipes-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 30px 20px;
             }
             
             header h1 {
                 font-size: 2em;
             }
+
+            header .subtitle {
+                font-size: 1.1em;
+            }
             
             .stage-header h2 {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
 
-            .container {
-                padding: 25px;
+            .stage-header {
+                padding: 20px 25px;
             }
             
             .recipe-meta {
                 flex-direction: column;
                 gap: 15px;
             }
+
+            .recipe-content {
+                padding: 20px;
+            }
+
+            .step-content {
+                width: calc(100% - 45px);
+                font-size: 1em;
+            }
         }
         
         @media (max-width: 480px) {
             body {
-                padding: 10px;
+                padding: 5px;
             }
             
             .container {
-                padding: 20px;
+                padding: 20px 15px;
+                border-radius: 10px;
             }
             
             header h1 {
                 font-size: 1.5em;
             }
+
+            header .subtitle {
+                font-size: 1em;
+            }
             
             .device-info h3 {
                 font-size: 1.1em;
+            }
+
+            .device-info {
+                padding: 15px;
+            }
+
+            .stage-header h2 {
+                font-size: 1.5em;
+            }
+
+            .recipe-header h3 {
+                font-size: 1.4em;
+            }
+
+            .step-number {
+                width: 30px;
+                height: 30px;
+                font-size: 1em;
+            }
+
+            .step-content {
+                width: calc(100% - 40px);
+                font-size: 0.95em;
+            }
+
+            .step-detail {
+                padding-left: 40px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -445,7 +501,7 @@
         <div class="safety-warning">
             <h3>⚠️ ΣΗΜΑΝΤΙΚΕΣ ΟΔΗΓΙΕΣ ΑΣΦΑΛΕΙΑΣ</h3>
             <ul>
-                <li><strong>Ελαιόλαδο:</strong> Μόνο μετά τον πρώτο μήνα τροφών, ξεκινάμε με 1/4 κουταλάκι του γλυκού.</li>
+                <li><strong>Ελαιόλαδο:</strong> Μόνο μετά τον πρώτο μήνα στερεών τροφών, ξεκινάμε με 1/4 κουταλάκι του γλυκού.</li>
                 <li><strong>Φέτα/Τυριά:</strong> Ελάχιστη ποσότητα μετά τους 12 μήνες (υψηλό αλάτι)</li>
                 <li><strong>Λεμόνι:</strong> Μόνο μετά τους 14 μήνες (όξινο pH)</li>
                 <li><strong>Μελιτζάνα:</strong> Μετά τους 10 μήνες (σολανίνη)</li>
@@ -626,13 +682,13 @@
 
                             <div class="step">
                                 <span class="step-number">7</span>
-                                <span class="step-content"><strong>Ανάμειξη:</strong> Πατήστε "Blend" 5-6 φορές για 20 δευτερόλεπτα μέχρι να γίνει κρεμώδες. Η πατάτα χρειάζεται λίγο παραπάνω ανάμειξη.</span>
+                                <span class="step-content"><strong>Ανάμειξη:</strong> Πατήστε "Blend" 5-6 φορές για 20 δευτερόλεπτα μέχρι να γίνει κρεμώδες. Η πατάτα χρειάζεται λίγο περισσότερη ανάμειξη.</span>
                                 <div class="step-detail">🥔 Προσθέστε λίγο από το νερό του ατμού για καλύτερη υφή</div>
                             </div>
 
                             <div class="step">
                                 <span class="step-number">8</span>
-                                <span class="step-content"><strong>Τελειώματα (Προαιρετικό):</strong> Αν το μωρό τρώει στερεές τροφές 1+ μήνα, προσθέστε 1/4 κ.γ. ελαιόλαδο και ανακατέψτε με κουτάλι.</span>
+                                <span class="step-content"><strong>Τελείωμα (Προαιρετικό):</strong> Αν το μωρό τρώει στερεές τροφές 1+ μήνα, προσθέστε 1/4 κ.γ. ελαιόλαδο και ανακατέψτε με κουτάλι.</span>
                             </div>
 
                             <div class="step">
@@ -652,7 +708,7 @@
                         </div>
 
                         <div class="age-warning">
-                            ⚠️ Το ελαιόλαδο προσθέτετε ΜΟΝΟ αν το μωρό τρώει στερεές τροφές 1+ μήνα
+                            ⚠️ Το ελαιόλαδο προστίθεται ΜΟΝΟ αν το μωρό τρώει στερεές τροφές 1+ μήνα
                         </div>
 
                         <div class="badges">
