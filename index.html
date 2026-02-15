@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ελληνικές συνταγές για βρέφη με Philips Avent 4-in-1 Steamer Blender. Παραδοσιακές γεύσεις της Ελλάδας για υγιή ανάπτυξη.">
+    <meta name="keywords" content="βρεφικές συνταγές, ελληνική κουζίνα, Philips Avent, μωρά, παιδική διατροφή">
+    <meta name="author" content="Michail Sotiriou Michalakopoulos">
+    <title>Ελληνικές Συνταγές για Βρέφη - Philips Avent 4-in-1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            border-radius: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 4px solid #00a99d;
+            padding-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #00a99d;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header .subtitle {
+            font-size: 1.3em;
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .device-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .device-info h3 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .safety-warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+
+        .safety-warning h3 {
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .safety-warning ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .safety-warning li {
+            padding: 8px 0;
+            color: #856404;
+        }
+
+        .safety-warning li:before {
+            content: "⚠️ ";
+            margin-right: 8px;
+        }
+
+        .stage {
+            margin-bottom: 80px;
+        }
+
+        .stage-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .stage-header h2 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .stage-header .stage-number {
+            font-size: 1.2em;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stage-header .age-range {
+            font-size: 1.2em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .recipe-card {
+            border: 3px solid #ecf0f1;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #00a99d;
+        }
+
+        .recipe-header {
+            background: #00a99d;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .recipe-header h3 {
+            font-size: 1.7em;
+            margin-bottom: 8px;
+        }
+
+        .recipe-number {
+            font-size: 1em;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .recipe-meta {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item strong {
+            display: block;
+            color: #00a99d;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .meta-item span {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .recipe-content {
+            padding: 30px;
+        }
+
+        .ingredients {
+            margin-bottom: 30px;
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .ingredients h4 {
+            color: #00a99d;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+            border-bottom: 3px solid #00a99d;
+            padding-bottom: 8px;
+        }
+
+        .ingredients ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ingredients li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #d1e7dd;
+            font-size: 1.05em;
+        }
+
+        .ingredients li:before {
+            content: "✓ ";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .philips-instructions {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #4caf50;
+        }
+
+        .philips-instructions h4 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .philips-instructions h4:before {
+            content: "🔧";
+            font-size: 1.3em;
+        }
+
+        .step {
+            background: white;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #4caf50;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            background: #4caf50;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.1em;
+        }
+
+        .step-content {
+            display: inline-block;
+            vertical-align: middle;
+            width: calc(100% - 50px);
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+
+        .step-detail {
+            color: #5d6d7e;
+            font-size: 0.95em;
+            margin-top: 8px;
+            padding-left: 47px;
+            font-style: italic;
+        }
+
+        .nutrition-tips {
+            background: #e8f8f5;
+            border-left: 5px solid #1abc9c;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .nutrition-tips strong {
+            color: #16a085;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.15em;
+        }
+
+        .nutrition-tips p {
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .cooking-tips {
+            background: #fef5e7;
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 8px;
+        }
+
+        .cooking-tips strong {
+            color: #e67e22;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.15em;
+        }
+
+        .cooking-tips p {
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+
+        .badges {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge.vegetarian {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .badge.freezable {
+            background: #d6eaf8;
+            color: #2980b9;
+        }
+
+        .badge.greek {
+            background: #fdebd0;
+            color: #d68910;
+        }
+
+        .badge.safe {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 4px solid #00a99d;
+            color: #7f8c8d;
+        }
+
+        footer p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .age-warning {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .recipes-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2em;
+            }
+            
+            .stage-header h2 {
+                font-size: 1.6em;
+            }
+
+            .container {
+                padding: 25px;
+            }
+            
+            .recipe-meta {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            header h1 {
+                font-size: 1.5em;
+            }
+            
+            .device-info h3 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇬🇷 Ελληνικές Συνταγές για Βρέφη</h1>
+            <p class="subtitle">Παραδοσιακές γεύσεις της Ελλάδας για υγιή ανάπτυξη</p>
+            <div class="device-info">
+                <h3>✨ Ειδικά σχεδιασμένες για Philips Avent 4-in-1 Steamer Blender</h3>
+                <p>Με αναλυτικές οδηγίες βήμα-βήμα • Ασφαλείς για κάθε ηλικία • Βασισμένες στη Μεσογειακή διατροφή</p>
+            </div>
+        </header>
+
+        <div class="safety-warning">
+            <h3>⚠️ ΣΗΜΑΝΤΙΚΕΣ ΟΔΗΓΙΕΣ ΑΣΦΑΛΕΙΑΣ</h3>
+            <ul>
+                <li><strong>Ελαιόλαδο:</strong> Μόνο μετά τον πρώτο μήνα τροφών, ξεκινάμε με 1/4 κουταλάκι του γλυκού.</li>
+                <li><strong>Φέτα/Τυριά:</strong> Ελάχιστη ποσότητα μετά τους 12 μήνες (υψηλό αλάτι)</li>
+                <li><strong>Λεμόνι:</strong> Μόνο μετά τους 14 μήνες (όξινο pH)</li>
+                <li><strong>Μελιτζάνα:</strong> Μετά τους 10 μήνες (σολανίνη)</li>
+                <li><strong>Αυγά:</strong> Μετά τους 12 μήνες (αλλεργιογόνο)</li>
+                <li><strong>Γιαούρτι:</strong> Από 6 μήνες (ελληνικό/προβείου χωρίς ζάχαρη)</li>
+                <li><strong>ΠΑΝΤΑ συμβουλευτείτε τον παιδίατρό σας πριν εισάγετε νέες τροφές</strong></li>
+            </ul>
+        </div>
+
+        <!-- ΣΤΑΔΙΟ 1: Πρώτες Γεύσεις (6+ μήνες) -->
+        <section class="stage">
+            <div class="stage-header">
+                <span class="stage-number">Στάδιο 1</span>
+                <h2>Πρώτες Γεύσεις</h2>
+                <span class="age-range">6+ μήνες</span>
+            </div>
+
+            <div class="recipes-grid">
+                <!-- Συνταγή 17: Πουρές Κολοκύθας Κόκκινης -->
+                <article class="recipe-card">
+                    <div class="recipe-header">
+                        <span class="recipe-number">Ελληνική Συνταγή #17</span>
+                        <h3>Πουρές Κολοκύθας Κόκκινης</h3>
+                    </div>
+                    <div class="recipe-meta">
+                        <div class="meta-item">
+                            <strong>20'</strong>
+                            <span>Συνολικός χρόνος</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>15'</strong>
+                            <span>Ατμός</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>3-4</strong>
+                            <span>Μερίδες</span>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="ingredients">
+                            <h4>Υλικά</h4>
+                            <ul>
+                                <li>200g κολοκύθα κόκκινη (ελληνική, ξυσμένη & καθαρισμένη)</li>
+                                <li>50ml νερό φιλτραρισμένο</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="philips-instructions">
+                            <h4>Οδηγίες με Philips Avent 4-in-1</h4>
+                            
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-content"><strong>Προετοιμασία:</strong> Πλύνετε την κολοκύθα, ξύστε την και αφαιρέστε τους σπόρους. Κόψτε σε κυβάκια 1-2 εκ.</span>
+                                <div class="step-detail">💡 Χρησιμοποιήστε κολοκύθα Κρήτης ή Τσίου για καλύτερη γλυκιά γεύση</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-content"><strong>Τοποθέτηση:</strong> Ανοίξτε το δοχείο του Philips Avent. Τοποθετήστε τα κυβάκια κολοκύθας στο καλάθι ατμού.</span>
+                                <div class="step-detail">⚙️ Μην υπερφορτώνετε το καλάθι - αφήστε χώρο για κυκλοφορία ατμού</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-content"><strong>Προσθήκη νερού:</strong> Γεμίστε τη δεξαμενή νερού μέχρι το σημάδι των 200ml.</span>
+                                <div class="step-detail">💧 Χρησιμοποιήστε φιλτραρισμένο ή εμφιαλωμένο νερό</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <span class="step-content"><strong>Ατμός:</strong> Επιλέξτε τη λειτουργία "Steam" (Ατμός) και ρυθμίστε στα 15 λεπτά. Πατήστε Start.</span>
+                                <div class="step-detail">🔥 Η συσκευή θα σταματήσει αυτόματα όταν τελειώσει</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <span class="step-content"><strong>Αναποδογύρισμα:</strong> Όταν τελειώσει ο ατμός, αφαιρέστε το καλάθι (ΠΡΟΣΟΧΗ: είναι ζεστό!). Αδειάστε το νερό που συγκεντρώθηκε. Αναποδογυρίστε το δοχείο στη θέση ανάμειξης.</span>
+                                <div class="step-detail">🔄 Αυτή η λειτουργία είναι μοναδική στο Philips Avent</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">6</span>
+                                <span class="step-content"><strong>Ανάμειξη:</strong> Επιλέξτε "Blend" (Ανάμειξη). Πατήστε 4-5 φορές για 15-20 δευτερόλεπτα κάθε φορά μέχρι να γίνει εντελώς λείο πουρέ.</span>
+                                <div class="step-detail">⏱️ Για πιο ρευστό πουρέ, προσθέστε 2-3 κ.σ. από το νερό του ατμού</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">7</span>
+                                <span class="step-content"><strong>Σερβίρισμα:</strong> Αφήστε να κρυώσει σε θερμοκρασία δωματίου (~37°C). Δοκιμάστε πάντα πριν δώσετε στο μωρό.</span>
+                                <div class="step-detail">🌡️ Ελέγξτε τη θερμοκρασία στον καρπό σας</div>
+                            </div>
+                        </div>
+
+                        <div class="nutrition-tips">
+                            <strong>💚 Διατροφικά Οφέλη:</strong>
+                            <p>Υψηλή σε βήτα-καροτίνη, Βιταμίνη A & C. Υποστηρίζει την όραση, το δέρμα και το ανοσοποιητικό σύστημα του μωρού. Ιδανική πρώτη τροφή.</p>
+                        </div>
+
+                        <div class="cooking-tips">
+                            <strong>👨‍🍳 Συμβουλές Φύλαξης:</strong>
+                            <p>Διατηρείται στο ψυγείο για 3 ημέρες σε αεροστεγές δοχείο. Μπορείτε να καταψύξετε σε μικρές μερίδες (ice cube trays) για έως 3 μήνες.</p>
+                        </div>
+
+                        <div class="badges">
+                            <span class="badge vegetarian">🌱 Χορτοφαγική</span>
+                            <span class="badge freezable">❄️ Κατάψυξη</span>
+                            <span class="badge greek">🇬🇷 Ελληνική</span>
+                            <span class="badge safe">✅ 6+ μήνες</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Συνταγή 18: Πουρές Καρότου με Πατάτα -->
+                <article class="recipe-card">
+                    <div class="recipe-header">
+                        <span class="recipe-number">Ελληνική Συνταγή #18</span>
+                        <h3>Πουρές Καρότου με Πατάτα</h3>
+                    </div>
+                    <div class="recipe-meta">
+                        <div class="meta-item">
+                            <strong>25'</strong>
+                            <span>Συνολικός χρόνος</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>20'</strong>
+                            <span>Ατμός</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>4</strong>
+                            <span>Μερίδες</span>
+                        </div>
+                    </div>
+                    <div class="recipe-content">
+                        <div class="ingredients">
+                            <h4>Υλικά</h4>
+                            <ul>
+                                <li>100g καρότο (ελληνικό, ξυσμένο)</li>
+                                <li>100g πατάτα (Κύπρου ή Νάξου, ξυσμένη)</li>
+                                <li>1/4 κ.γ. ελαιόλαδο εξαιρετικά παρθένο (ΜΟΝΟ αν το μωρό τρώει στερεές τροφές 1+ μήνα)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="philips-instructions">
+                            <h4>Οδηγίες με Philips Avent 4-in-1</h4>
+                            
+                            <div class="step">
+                                <span class="step-number">1</span>
+                                <span class="step-content"><strong>Προετοιμασία:</strong> Ξύστε καλά το καρότο και την πατάτα. Κόψτε σε ομοιόμορφα κυβάκια 1-2 εκ.</span>
+                                <div class="step-detail">🥕 Τα καρότα από Κρήτη έχουν πιο γλυκιά γεύση</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">2</span>
+                                <span class="step-content"><strong>Τοποθέτηση:</strong> Τοποθετήστε πρώτα την πατάτα (χρειάζεται περισσότερο χρόνο) και από πάνω το καρότο στο καλάθι ατμού.</span>
+                                <div class="step-detail">📍 Η διάταξη βοηθάει στο ομοιόμορφο μαγείρεμα</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">3</span>
+                                <span class="step-content"><strong>Νερό:</strong> Γεμίστε τη δεξαμενή νερού μέχρι το σημάδι των 250ml (περισσότερο από την κολοκύθα).</span>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">4</span>
+                                <span class="step-content"><strong>Ατμός:</strong> Επιλέξτε "Steam" και ρυθμίστε στα 20 λεπτά. Πατήστε Start.</span>
+                                <div class="step-detail">⏰ Η πατάτα χρειάζεται περισσότερο χρόνο από άλλα λαχανικά</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">5</span>
+                                <span class="step-content"><strong>Έλεγχος:</strong> Στα 15 λεπτά, ελέγξτε αν τα λαχανικά είναι μαλακά με πιρούνι. Αν χρειάζεται, προσθέστε 3-5 λεπτά.</span>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">6</span>
+                                <span class="step-content"><strong>Αναποδογύρισμα:</strong> Αφαιρέστε το καλάθι (προσοχή!), αδειάστε μέρος του νερού (κρατήστε λίγο), αναποδογυρίστε στη θέση ανάμειξης.</span>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">7</span>
+                                <span class="step-content"><strong>Ανάμειξη:</strong> Πατήστε "Blend" 5-6 φορές για 20 δευτερόλεπτα μέχρι να γίνει κρεμώδες. Η πατάτα χρειάζεται λίγο παραπάνω ανάμειξη.</span>
+                                <div class="step-detail">🥔 Προσθέστε λίγο από το νερό του ατμού για καλύτερη υφή</div>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">8</span>
+                                <span class="step-content"><strong>Τελειώματα (Προαιρετικό):</strong> Αν το μωρό τρώει στερεές τροφές 1+ μήνα, προσθέστε 1/4 κ.γ. ελαιόλαδο και ανακατέψτε με κουτάλι.</span>
+                            </div>
+
+                            <div class="step">
+                                <span class="step-number">9</span>
+                                <span class="step-content"><strong>Σερβίρισμα:</strong> Αφήστε να κρυώσει. Ελέγξτε τη θερμοκρασία πριν δώσετε στο μωρό.</span>
+                            </div>
+                        </div>
+
+                        <div class="nutrition-tips">
+                            <strong>💚 Διατροφικά Οφέλη:</strong>
+                            <p>Πηγή υδατανθράκων, Κάλιο, Βιταμίνη C & φυτικές ίνες. Υποστηρίζει την ενέργεια και την υγιή ανάπτυξη.</p>
+                        </div>
+
+                        <div class="cooking-tips">
+                            <strong>👨‍🍳 Ελληνική Παράδοση:</strong>
+                            <p>Στα ελληνικά χωριά, οι γιαγιάδες έβραζαν πατάτες με καρότα για τα μωρά και τα έλιωναν με πιρούνι. Το Philips Avent κάνει αυτή τη διαδικασία πιο εύκολη και υγιεινή με τον ατμό!</p>
+                        </div>
+
+                        <div class="age-warning">
+                            ⚠️ Το ελαιόλαδο προσθέτετε ΜΟΝΟ αν το μωρό τρώει στερεές τροφές 1+ μήνα
+                        </div>
+
+                        <div class="badges">
+                            <span class="badge vegetarian">🌱 Χορτοφαγική</span>
+                            <span class="badge freezable">❄️ Κατάψυξη</span>
+                            <span class="badge greek">🇬🇷 Ελληνική</span>
+                            <span class="badge safe">✅ 6+ μήνες</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <h3 style="color: #00a99d; margin-bottom: 20px;">📝 Σημαντικές Σημειώσεις</h3>
+            <p><strong>• Καθαρισμός Philips Avent:</strong> Πλύνετε όλα τα μέρη μετά από κάθε χρήση με ζεστό σαπουνόνερο. Τα περισσότερα μέρη μπαίνουν στο πλυντήριο πιάτων.</p>
+            <p><strong>• Φύλαξη Γευμάτων:</strong> Ψυγείο: 3 ημέρες σε αεροστεγές δοχείο • Κατάψυξη: 3 μήνες σε ice cube trays</p>
+            <p><strong>• Ασφάλεια:</strong> Πάντα να συμβουλεύεστε τον παιδίατρό σας πριν εισάγετε νέες τροφές</p>
+            <p><strong>• Αλλεργίες:</strong> Εισάγετε νέες τροφές μία-μία και περιμένετε 3-5 ημέρες για να παρατηρήσετε αντιδράσεις</p>
+            <p style="margin-top: 30px; font-size: 0.9em;">Οι συνταγές αυτές βασίζονται στην παραδοσιακή ελληνική κουζίνα και τη Μεσογειακή διατροφή, προσαρμοσμένες για βρέφη σύμφωνα με τις διεθνείς παιδιατρικές οδηγίες.</p>
+            <p style="margin-top: 20px; color: #00a99d; font-weight: bold; font-size: 1.1em;">© 2026 - Ελληνικές Συνταγές για Βρέφη • Philips Avent 4-in-1</p>
+        </footer>
+    </div>
+</body>
+</html>
