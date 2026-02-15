@@ -140,14 +140,6 @@ greek-baby-recipes/
 4. Κάντε push στο branch (`git push origin feature/νεα-συνταγη`)
 5. Ανοίξτε ένα Pull Request
 
-## 📧 Επικοινωνία
-
-**Michail Sotiriou Michalakopoulos**  
-Συγγραφέας διηγημάτων και νουβελών • Ελληνική λαογραφία και παράδοση
-
-- 🌐 Website: [https://michelis2023.github.io/short-stories/](https://michelis2023.github.io/short-stories/)
-- 📧 GitHub: [@Michelis2023](https://github.com/Michelis2023)
-
 ## 📜 Άδεια Χρήσης
 
 Αυτό το project είναι διαθέσιμο υπό την άδεια MIT. Δείτε το αρχείο [LICENSE](LICENSE) για περισσότερες πληροφορίες.
@@ -167,6 +159,6 @@ greek-baby-recipes/
 ---
 
 <p align="center">
-  <strong>Φτιαγμένο με ❤️ στην Ελλάδα 🇬🇷</strong><br>
+  <strong>🇬🇷 Φτιαγμένο με ❤️ στην Ελλάδα 🇬🇷</strong><br>
   © 2026 - Ελληνικές Συνταγές για Βρέφη
 </p>
