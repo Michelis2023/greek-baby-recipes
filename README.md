@@ -1,4 +1,4 @@
-# 🇬🇷 Ελληνικές Συνταγές για Βρέφη - Philips Avent 4-in-1
+# 🇬🇷 Ελληνικές Συνταγές για Βρέφη
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-blue)](https://michelis2023.github.io/greek-baby-recipes/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
